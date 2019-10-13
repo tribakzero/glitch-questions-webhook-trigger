@@ -8,6 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "glitch-questions": "^0.2.2"
+    "glitch-questions": "^0.2.3"
   }
 }

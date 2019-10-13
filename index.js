@@ -4,6 +4,7 @@ const { intervalToMS, postMessage } = require('./utils');
 module.exports = setInterval(() => {
   glitchQuestions()
     .then(res => {
-      if (res.length > 0) postMessage();
+      console.log(res);
+      if (res.length >= 0) postMessage(res);
     });
 }, intervalToMS());

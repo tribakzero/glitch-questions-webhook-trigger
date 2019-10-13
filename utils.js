@@ -29,6 +29,8 @@ const buildMessage = source => {
           value: url,
           inline: true
         }))
+    }, {
+      fields: [{ name: 'test', value: 'test', inline: true }]
     }]
   };
 };
