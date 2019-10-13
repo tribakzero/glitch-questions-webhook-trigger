@@ -5,6 +5,6 @@ module.exports = setInterval(() => {
   glitchQuestions()
     .then(res => {
       console.log(res);
-      if (res.length >= 0) postMessage(res);
+      if (res.length > 0) postMessage(res);
     });
 }, intervalToMS());

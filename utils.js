@@ -20,8 +20,8 @@ const getNewItems = source =>
     return isNew;
   });
 
-const buildMessage = source => {
-  const message = {
+const buildMessage = source =>
+  ({
     embeds: [{
       fields: getNewItems(source).map(({question, url}) =>
         ({
@@ -29,22 +29,16 @@ const buildMessage = source => {
           value: url,
           inline: true
         }))
-    }, {
-      fields: [{ name: 'test', value: 'test', inline: true }]
     }]
-  };
-};
+  });
 
-const postMessage = source => {
-  const options = {
+const postMessage = source =>
+  rp({
     method: 'POST',
     uri: process.env.WEBHOOK,
     body: buildMessage(source),
     json: true
-  };
-
-  rp(options);
-};
+  });
 
 module.exports = {
   intervalToMS,
