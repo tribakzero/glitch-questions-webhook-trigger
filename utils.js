@@ -34,15 +34,13 @@ const buildMessage = source => {
 };
 
 const postMessage = source => {
-  const data = JSON.stringify();
-  
   const options = {
     method: 'POST',
     uri: process.env.WEBHOOK,
     body: buildMessage(source),
     json: true
   };
-  
+
   rp(options);
 };
 
