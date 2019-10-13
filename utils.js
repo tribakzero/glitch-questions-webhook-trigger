@@ -22,25 +22,28 @@ const getNewItems = source =>
 
 const buildMessage = source => {
   const message = {
-    text: "New questions:",
-    attachments: getNewItems(source).map(({question, url}) => {
-      const output = {
-        text: `${question}\n${url}`
-      };
-      return output;
-    })
+    embeds: [{
+      fields: getNewItems(source).map(({question, url}) =>
+        ({
+          name: question,
+          value: url,
+          inline: true
+        }))
+    }]
   };
 };
 
 const postMessage = source => {
-  const data = JSON.stringify(buildMessage(source));
+  const data = JSON.stringify();
+  
   const options = {
-    uri: process.env.WEB,
-    port: 443,
-    path: WEBHOOK,
-    method: "POST"
+    method: 'POST',
+    uri: process.env.WEBHOOK,
+    body: buildMessage(source),
+    json: true
   };
-  rp(process.env.);
+  
+  rp(options);
 };
 
 module.exports = {
