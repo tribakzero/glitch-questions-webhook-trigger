@@ -1,7 +1,13 @@
 {
-  "name": "blankity-blank",
+  "name": "glitch-questions-discord-notifier",
   "version": "1.0.0",
+  "description": "Uses glitch-questions and triggers it on a constant basis, then sends a Discord Webhook event",
+  "main": "index.js",
   "scripts": {
-    "start": "date; echo hello"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "glitch-questions": "^0.2.2"
   }
 }
