@@ -13,9 +13,11 @@ const getNewItems = source =>
     if (isNew) {
       cache[questionId] = questionId;
       console.log("Item added to cache: ", questionId);
-      console.log("Current cache: ", cache);
     }
-    console.log("Item already in cache: ", questionId);
+    else {
+      console.log("Item already in cache: ", questionId);
+    }
+    console.log("Current cache: ", cache);
     return isNew;
   });
 
