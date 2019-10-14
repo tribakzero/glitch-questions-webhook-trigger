@@ -1,7 +1,7 @@
 # Glitch Questions Webhook Trigger",
 Uses glitch-questions and triggers it on a constant basis, then sends a Webhook event
 
-This project is messaging-service-agnostic, has been tested with Slack and Discord, but anything that generates webhooks, should be compatible.
+This project is messaging-service-agnostic, has been tested with Slack and Discord, but anything that generates webhooks, should be compatible. This is explained below.
 
 ## Installation
 
