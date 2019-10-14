@@ -15,11 +15,12 @@ const newItems = source =>
   });
 
 const postMessage = (source, webhook, messageGenerator) => {
-  if (newItems(source).length === 0) return;
+  const items = newItems(source);
+  if (items.length === 0) return;
   return rp({
     method: 'POST',
     uri: webhook,
-    body: messageGenerator(source, newItems),
+    body: messageGenerator(source, items),
     json: true
   });
 }
