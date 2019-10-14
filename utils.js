@@ -3,7 +3,7 @@ const util = require('util');
 
 const rp = util.promisify(request);
 
-const cache = [];
+const cache = {};
 
 const intervalToMS = (interval) => interval * 1000 || 10000;
 
