@@ -38,7 +38,7 @@
     "mocha": "^6.2.1"
   },
   "dependencies": {
-    "glitch-questions": "^0.2.7",
+    "glitch-questions": "^0.2.8",
     "request": "^2.88.0"
   }
 }
