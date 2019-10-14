@@ -1,4 +1,7 @@
 # Glitch Questions Webhook Trigger",
+[![Build Status](https://travis-ci.org/tribakzero/glitch-questions-webhook-trigger.svg?branch=master)](https://travis-ci.org/tribakzero/glitch-questions-webhook-trigger)
+[![Coverage Status](https://coveralls.io/repos/github/tribakzero/glitch-questions-webhook-trigger/badge.svg?branch=master)](https://coveralls.io/github/tribakzero/glitch-questions-webhook-trigger?branch=master)
+
 Uses glitch-questions and triggers it on a constant basis, then sends a Webhook event
 
 This project is messaging-service-agnostic, has been tested with Slack and Discord, but anything that generates webhooks, should be compatible. This is explained below.
