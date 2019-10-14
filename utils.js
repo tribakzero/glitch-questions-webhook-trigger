@@ -15,7 +15,7 @@ const newItems = source =>
   });
 
 const postMessage = (source, webhook, messageGenerator) => {
-  if (newItems().length === 0) return;
+  if (newItems(source).length === 0) return;
   return rp({
     method: 'POST',
     uri: webhook,
