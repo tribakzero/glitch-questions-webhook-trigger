@@ -1,6 +1,6 @@
 {
   "name": "glitch-questions-webhook-trigger",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Uses glitch-questions and triggers it on a constant basis, then sends a Webhook event",
   "main": "index.js",
   "engines": {
