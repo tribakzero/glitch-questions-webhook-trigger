@@ -11,7 +11,7 @@ module.exports = (webhook, messageGenerator, interval) => {
   setInterval(() => {
     glitchQuestions()
       .then(res => {
-        (res.length >= 0) ? postMessage(res, webhook, messageGenerator) : null;
+        (res.length > 0) ? postMessage(res, webhook, messageGenerator) : null;
       });
   }, intervalToMS(interval));
 }
