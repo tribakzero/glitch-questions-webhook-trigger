@@ -3,11 +3,9 @@ const util = require('util');
 
 const rp = util.promisify(request);
 
-const { INTERVAL, WEBHOOK } = process.env;
-
 const cache = [];
 
-const intervalToMS = () => INTERVAL * 1000 || 10000;
+const intervalToMS = (interval) => interval * 1000 || 10000;
 
 const getNewItems = source =>
   source.filter(({ questionId }) => {
@@ -20,23 +18,11 @@ const getNewItems = source =>
     return isNew;
   });
 
-const buildMessage = source =>
-  ({
-    embeds: [{
-      fields: getNewItems(source).map(({question, url}) =>
-        ({
-          name: question,
-          value: url,
-          inline: true
-        }))
-    }]
-  });
-
-const postMessage = source =>
+const postMessage = (source, webhook, messageGenerator) =>
   rp({
     method: 'POST',
-    uri: process.env.WEBHOOK,
-    body: buildMessage(source),
+    uri: webhook,
+    body: messageGenerator(source, getNewItems),
     json: true
   });
 

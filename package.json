@@ -1,13 +1,44 @@
 {
-  "name": "glitch-questions-discord-notifier",
-  "version": "1.0.0",
-  "description": "Uses glitch-questions and triggers it on a constant basis, then sends a Discord Webhook event",
+  "name": "glitch-questions-webhook-trigger",
+  "version": "0.1.0",
+  "description": "Uses glitch-questions and triggers it on a constant basis, then sends a Webhook event",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tribakzero/glitch-questions-webhook-trigger.git"
+  },
+  "keywords": [
+    "tribak",
+    "glitch.com",
+    "questions",
+    "thenable",
+    "request",
+    "promise",
+    "glitch",
+    "https"
+  ],
+  "author": "Alejandro Camarillo <tribak.zero@gmail.com> (https://tribak.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tribakzero/glitch-questions-webhook-trigger/issues"
+  },
+  "homepage": "https://github.com/tribakzero/glitch-questions-webhook-trigger#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.7",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.1"
   },
   "dependencies": {
-    "glitch-questions": "^0.2.3"
+    "glitch-questions": "^0.2.4",
+    "request": "^2.88.0"
   }
 }
