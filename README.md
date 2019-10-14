@@ -1,4 +1,4 @@
-# Glitch Questions Webhook Trigger",
+# Glitch Questions Webhook Trigger
 [![Build Status](https://travis-ci.org/tribakzero/glitch-questions-webhook-trigger.svg?branch=master)](https://travis-ci.org/tribakzero/glitch-questions-webhook-trigger)
 [![Coverage Status](https://coveralls.io/repos/github/tribakzero/glitch-questions-webhook-trigger/badge.svg?branch=master)](https://coveralls.io/github/tribakzero/glitch-questions-webhook-trigger?branch=master)
 
