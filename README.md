@@ -7,6 +7,14 @@ This project is messaging-service-agnostic, has been tested with Slack and Disco
 
   `npm install glitch-questions-webhook-trigger`
 
+## Usage
+
+```
+var glitchQuestionsWebhookTrigger = require('glitch-questions-webhook-trigger');
+
+glitchQuestionsWebhookTrigger(WEBHOOK_URL, MESSAGE_GENERATOR_FUNCTION, INTERVAL);
+```
+
 # Configuration
 The only exposed method is `glitchQuestionsWebhookTrigger`, is has some parameters:
 
