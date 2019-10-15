@@ -20,7 +20,7 @@ const postMessage = (source, webhook, messageGenerator) => {
   return rp({
     method: 'POST',
     uri: webhook,
-    body: messageGenerator(source, items),
+    body: messageGenerator(items),
     json: true
   });
 }
