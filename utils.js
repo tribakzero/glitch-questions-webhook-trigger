@@ -25,7 +25,22 @@ const postMessage = (source, webhook, messageGenerator) => {
   });
 }
 
+const processQuestions = (data, webhook, messageGenerator) => {
+  if (data.length > 0) {
+    postMessage(data, webhook, messageGenerator)
+  }
+};
+
+const fetchAndProcessQuestions = (webhook, messageGenerator) => {
+  glitchQuestions()
+    .then((data) =>
+      processQuestions(data, webhook, messageGenerator)
+    );
+}
+
 module.exports = {
-  intervalToMS,
-  postMessage
+  postMessage,
+  processQuestions,
+  fetchAndProcessQuestions,
+  intervalToMS
 };

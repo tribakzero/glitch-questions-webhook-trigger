@@ -1,19 +1,14 @@
 'use strict';
 
 const glitchQuestions = require('glitch-questions');
-const { intervalToMS, postMessage } = require('./utils');
+const { postMessage, processQuestions, intervalToMS } = require('./utils');
 
 module.exports = (webhook, messageGenerator, interval) => {
-  if (!webhook) console.warn('You need to add a webhook URL');
-  if (!messageGenerator) console.warn('You need to add a messageGenerator method');
-  if (!interval) console.warn('You need to add an interval (in seconds)');
-  if(!webhook || !messageGenerator || !interval) return;
-  setInterval(() => {
-    glitchQuestions()
-      .then(res => {
-        if (res.length > 0) {
-          postMessage(res, webhook, messageGenerator)
-        }
-      });
-  }, intervalToMS(interval));
+  if (!webhook) throw new Error('missing webhook');
+  if (!messageGenerator) throw new Error('missing messageGenerator');
+  if (!interval) throw new Error('missing interval');
+  return setInterval(
+    () => fetchAndProcessQuestions(webhook, messageGenerator)
+    , intervalToMS(interval)
+  );
 }
