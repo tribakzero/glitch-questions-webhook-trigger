@@ -7,7 +7,7 @@ const cache = {};
 
 const intervalToMS = (interval) => interval * 1000 || 10000;
 
-const newItems = source =>
+const newItems = (source, cache) =>
   source.filter(({ questionId }) => {
     const isNew = !cache.hasOwnProperty(questionId);
     if (isNew) cache[questionId] = questionId;
@@ -15,7 +15,7 @@ const newItems = source =>
   });
 
 const postMessage = (source, webhook, messageGenerator) => {
-  const items = newItems(source);
+  const items = newItems(source, cache);
   if (items.length === 0) return;
   return rp({
     method: 'POST',
@@ -39,8 +39,9 @@ const fetchAndProcessQuestions = (webhook, messageGenerator) => {
 }
 
 module.exports = {
+  intervalToMS,
+  newItems,
   postMessage,
   processQuestions,
-  fetchAndProcessQuestions,
-  intervalToMS
+  fetchAndProcessQuestions
 };
